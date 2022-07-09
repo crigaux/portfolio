@@ -1,0 +1,346 @@
+@font-face {
+    font-family: "Trispace";
+    src: url("../font/Trispace-VariableFont_wdth\,wght.ttf");
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("../font/Dosis/Dosis-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../font/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat";
+    background-color: #0f0f0f;
+    overflow-x: hidden;
+    color: white;
+}
+
+/* Mise en page globale, margin, padding des blocs */
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2rem;
+}
+
+p {
+    color: white;
+    margin: 2rem;
+    font-size: 1rem;
+}
+
+@keyframes titleAnim {
+    0% {
+        transform: translateX(-50vh);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-25vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    color: white;
+}
+
+h3 {
+    margin: 2rem 0 -0.5rem 2rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+/* ----------------------- */
+
+/* ----- Menu Mobile + navbar ------ */
+
+#container {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    max-height: 100%;
+    position: relative;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+.logoWhite img {
+    position: fixed;
+    z-index: 2;
+    left: 20px;
+    top: 15px;
+    width: 35px;
+    height: 35px;
+    transition: all 0.3s ease;
+}
+
+.menu_overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    color: #fff;
+    background: white;
+    z-index: 100;
+    transform: translateX(110%);
+    transition: transform 0.7s ease;
+}
+
+.cross, .menuIcon {
+    position: fixed;
+    z-index: 2;
+    right: 20px;
+    top: 20px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.cross {
+    color: black;
+}
+
+.menuIcon {
+    color: white;
+}
+
+.menuIcon:hover, .cross:hover {
+    transform: scale(1.1) rotate(360deg);
+}
+
+.menu_overlay ul {
+    height: 70%;
+    width: 100%;
+    margin-top: 15%;
+    list-style: none;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu_overlay a {
+    color: black;
+    background: 
+        linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
+        linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.menu_overlay a:hover {
+    background-size: 0 0.1em, 100% 0.1em;
+}
+
+#menuBtn {
+    display: none;
+}
+
+#menuBtn:checked ~ .menu_overlay {
+    transform: translateX(0);
+}
+
+.landing_page {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.logoOverlay {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+}
+
+.logoOverlay img {
+    width: 80px;
+    height: 80px;
+}
+
+/* ----------------------- */
+
+/* ----- Home Page ----- */
+
+#about p {
+    animation: titleAnim 1.5s ease-in;
+}
+
+#about h2 {
+    animation: titleAnim 1.5s ease-in;
+}
+
+#skills p {
+    margin: 1.5rem 2rem 0 2rem;
+}
+
+.toolsIconBox {
+    margin: 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolsIcon {
+    margin-top: 1.5rem;
+}
+
+footer hr {
+    width: 80%;
+    margin-top: 2rem;
+}
+
+.footerIcon {
+    margin: 2rem;
+}
+
+/* ----- Projects Page ----- */
+
+#projects {
+    z-index: 1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+#projects h2 {
+    animation: titleAnim 1s linear;
+    margin-bottom: 1rem;
+}
+
+.project1{
+    height: 200px;
+    width: 100%;
+    background-image: url("../img/cardCollection.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
+    margin-top: 2rem;
+    position: relative;
+    opacity: 0;
+    animation: titleAnim 1.5s ease-in 0.5s forwards;
+}
+
+.project2 {
+    height: 200px;
+    width: 100%;
+    background-image: url("../img/bourseResponsive.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
+    margin-top: 2rem;
+    position: relative;
+    opacity: 0;
+    animation: titleAnim 1.5s ease-in 0.8s forwards;
+}
+
+.project3 {
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
+    background-color: blue;
+    margin-top: 2rem;
+    position: relative;
+    opacity: 0;
+    animation: titleAnim 1.5s ease-in 1.1s forwards;
+}
+
+.project4 {
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
+    background-color: blue;
+    margin-top: 2rem;
+    position: relative;
+    opacity: 0;
+    animation: titleAnim 1.5s ease-in 1.4s forwards;
+}
+
+.viewMore {
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+@media screen and (min-width : 1224px) {
+    .toolsIconBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .left, .right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 50%;
+        margin: 1rem 0;
+    }
+
+    h2 {
+        font-size: 3rem;
+        margin-left: 1rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        width: 70%;
+        margin: 5rem;
+    }
+
+    .name {
+        font-size: 4rem;
+        
+    }
+}
