@@ -41,7 +41,6 @@ section {
 }
 
 p {
-    color: white;
     margin: 2rem;
     font-size: 1rem;
 }
@@ -65,7 +64,6 @@ h2 {
     font-size: 2rem;
     font-weight: bold;
     position: relative;
-    color: white;
 }
 
 h3 {
@@ -77,7 +75,6 @@ footer {
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    color: white;
 }
 
 /* ----------------------- */
@@ -102,6 +99,10 @@ footer {
     width: 35px;
     height: 35px;
     transition: all 0.3s ease;
+}
+
+.logoWhite .logoLandingPageLight {
+    display: none;
 }
 
 .menu_overlay {
@@ -154,7 +155,7 @@ a {
     text-decoration: none;
 }
 
-.menu_overlay a {
+.overlayLink {
     color: black;
     background: 
         linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
@@ -165,7 +166,7 @@ a {
     transition: background-size 400ms;
 }
 
-.menu_overlay a:hover {
+.overlayLink:hover {
     background-size: 0 0.1em, 100% 0.1em;
 }
 
@@ -192,6 +193,10 @@ a {
 .logoOverlay img {
     width: 80px;
     height: 80px;
+}
+
+.logoOverlay .logoOverlayLight {
+    display: none;
 }
 
 /* ----------------------- */
@@ -326,6 +331,119 @@ footer a {
     padding: 0.5rem 1rem;
     font-weight: bold;
 }
+
+/* ----- Toggle pour passer dark / light mode ------*/
+
+.darkLightToggle {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    color: #ad7e18;
+}
+
+.checkbox {
+    display: none;
+}
+
+.label {
+    height: 50px;
+    width: 26px;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transform: scale(1.2);
+    padding: 5px 8px;
+}
+
+.iconLightMode:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.label .ball {
+    background-color: black;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transform: translateY(0px);
+    transition: transform 0.4s ease;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateY(24px);
+    background-color: white;
+}
+
+.checkbox:checked + .label {
+    background-color: black;
+}
+
+.fa-moon {
+    color:#0f0f0f;
+}
+
+.fa-sun {
+    color: white;
+}
+
+/* --------------------------------------- */
+
+/* -------- style light mode --------*/
+
+.light {
+    background-color: white;
+    color: #0f0f0f;
+}
+
+.light section {
+    background-color: white;
+    color: black;
+}
+
+.light .landing_page {
+    background-color: white;
+}
+
+.light .menuIcon {
+    color: #0f0f0f;
+}
+
+.light .menu_overlay ul li a , 
+.light .menu_overlay .cross {
+    color: white;
+}
+
+.light .logoOverlay {
+    fill: white;
+}
+
+.light .menu_overlay {
+    background-color: black;
+}
+
+.light .logoOverlay .logoOverlayLight {
+    display: block;
+}
+
+.light .logoOverlay .logoOverlaydark {
+    display: none;
+}
+
+.light .logoWhite .logoLandingPageLight {
+    display: block;
+}
+
+.light .logoWhite .logoLandingPageDark {
+    display: none;
+}
+/* ---------------------------------- */
 
 @media screen and (min-width : 1224px) {
     .menuIcon {
