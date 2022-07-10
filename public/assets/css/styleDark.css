@@ -336,6 +336,7 @@ footer a {
 
 .darkLightToggle {
     position: fixed;
+    z-index: 2;
     right: 2rem;
     bottom: 2rem;
     color: #ad7e18;
@@ -443,6 +444,19 @@ footer a {
 .light .logoWhite .logoLandingPageDark {
     display: none;
 }
+
+.light .viewMore {
+    background-color: #0f0f0f;
+    color: white;
+}
+
+.light .project1,
+.light .project2,
+.light .project3,
+.light .project4 {
+    box-shadow: 0 0 50px 10px inset rgba(209, 209, 209, 0.75);
+}
+
 /* ---------------------------------- */
 
 @media screen and (min-width : 1224px) {
