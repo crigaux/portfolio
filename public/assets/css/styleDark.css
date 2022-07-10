@@ -19,6 +19,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Montserrat";
     background-color: #0f0f0f;
@@ -70,7 +74,7 @@ h3 {
 
 footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     color: white;
@@ -136,7 +140,7 @@ footer {
 .menu_overlay ul {
     height: 70%;
     width: 100%;
-    margin-top: 15%;
+    margin-top: 10%;
     list-style: none;
     font-size: 2.5rem;
     display: flex;
@@ -194,6 +198,10 @@ a {
 
 /* ----- Home Page ----- */
 
+#projectsDesktop {
+    display: none;
+}
+
 #about p {
     animation: titleAnim 1.5s ease-in;
 }
@@ -227,7 +235,13 @@ footer hr {
 }
 
 .footerIcon {
-    margin: 2rem;
+    margin: 0 2rem 2rem 2rem;
+}
+
+footer a {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 /* ----- Projects Page ----- */
@@ -314,6 +328,49 @@ footer hr {
 }
 
 @media screen and (min-width : 1224px) {
+    .menuIcon {
+        margin-right: 50px;
+        font-size: 2.5rem;
+    }
+
+    .cross {
+        margin-right: 50px;
+        font-size: 2.5rem;
+    }
+
+    .logoWhite img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .menu_overlay ul li a {
+        font-size: 3rem;
+    }
+
+    section {
+        margin-left: 10vw;
+    }
+
+    #projectsDesktop {
+        z-index: 1;
+        height: auto;
+        display: block;
+        padding: 5rem 0;
+        margin-top: 25vh;
+    }
+
+    #projectsDesktop h2 {
+        margin-top: 5vh;
+        height: 60vh;
+    }
+    
+    #projectsDesktop div {
+        height: 60vh;
+        width: 60vw;
+        margin-bottom: 35vh;
+        margin-left: 10vw;
+    }
+
     .toolsIconBox {
         display: flex;
         flex-direction: column;
@@ -337,10 +394,23 @@ footer hr {
         font-size: 1.5rem;
         width: 70%;
         margin: 5rem;
+        line-height: 3rem;
+    }
+
+    h3 {
+        font-size: 2rem;
     }
 
     .name {
-        font-size: 4rem;
-        
+        font-size: 4rem; 
+    }
+
+    footer {
+        height: 40vh;
+        justify-content: center;
+    }
+
+    footer p {
+        text-align: center;
     }
 }
