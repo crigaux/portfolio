@@ -1,3 +1,7 @@
+/* ############################################################################## */
+/* ###############               Fonts Possibles                  ############### */
+/* ############################################################################## */
+
 @font-face {
     font-family: "Trispace";
     src: url("../font/Trispace-VariableFont_wdth\,wght.ttf");
@@ -13,6 +17,21 @@
     src: url("../font/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 
+/* ############################################################################## */
+/* ###############              Couleurs du site                  ############### */
+/* ############################################################################## */
+
+:root {
+    --bgDark: #0f0f0f;
+    --bgLight: white;
+    --fontDark: white;
+    --fontLight: #0f0f0f;
+}
+
+/* ############################################################################## */
+/* ###############                  Globales                      ############### */
+/* ############################################################################## */
+
 * {
     margin: 0;
     padding: 0;
@@ -25,12 +44,14 @@ html {
 
 body {
     font-family: "Montserrat";
-    background-color: #0f0f0f;
+    background-color: var(--bgDark);
     overflow-x: hidden;
-    color: white;
+    color: var(--fontDark);
 }
 
-/* Mise en page globale, margin, padding des blocs */
+/* ############################################################################## */
+/* ############### Mise en page de base, margin, padding des blocs ############## */
+/* ############################################################################## */
 
 section {
     height: 100vh;
@@ -43,21 +64,6 @@ section {
 p {
     margin: 2rem;
     font-size: 1rem;
-}
-
-@keyframes titleAnim {
-    0% {
-        transform: translateX(-50vh);
-        opacity: 0;
-    }
-    50% {
-        transform: translateX(-25vh);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0px);
-        opacity: 1;
-    }
 }
 
 h2 {
@@ -77,32 +83,31 @@ footer {
     align-items: center;
 }
 
-/* ----------------------- */
+/* ############################################################################## */
+/* ###############                  Keyframes                     ############### */
+/* ############################################################################## */
 
-/* ----- Menu Mobile + navbar ------ */
-
-#container {
-    width: 100vw;
-    max-width: 100%;
-    height: 100vh;
-    max-height: 100%;
-    position: relative;
-    background-color: black;
-    overflow-x: hidden;
+@keyframes titleAnim {
+    0% {
+        transform: translateX(-50vh);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-25vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
-.logoWhite img {
-    position: fixed;
-    z-index: 2;
-    left: 20px;
-    top: 15px;
-    width: 35px;
-    height: 35px;
-    transition: all 0.3s ease;
-}
+/* ############################################################################## */
+/* ###############             Menu Mobile + Navbar               ############### */
+/* ############################################################################## */
 
-.logoWhite .logoLandingPageLight {
-    display: none;
+.cross {
+    color: var(--fontLight);
 }
 
 .menu_overlay {
@@ -110,31 +115,14 @@ footer {
     height: 100vh;
     position: fixed;
     overflow: hidden;
-    color: #fff;
-    background: white;
+    color: var(--fontLight);
+    background: var(--bgLight);
     z-index: 100;
     transform: translateX(110%);
     transition: transform 0.7s ease;
 }
 
-.cross, .menuIcon {
-    position: fixed;
-    z-index: 2;
-    right: 20px;
-    top: 20px;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.cross {
-    color: black;
-}
-
-.menuIcon {
-    color: white;
-}
-
-.menuIcon:hover, .cross:hover {
+.cross:hover {
     transform: scale(1.1) rotate(360deg);
 }
 
@@ -150,13 +138,8 @@ footer {
     align-items: center;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
 .overlayLink {
-    color: black;
+    color: var(--fontLight);
     background: 
         linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
         linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0));
@@ -170,6 +153,69 @@ a {
     background-size: 0 0.1em, 100% 0.1em;
 }
 
+.logoOverlay {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+}
+
+.logoOverlay img {
+    width: 35px;
+    height: 35px;
+}
+
+.logoOverlay .logoOverlayLight {
+    display: none;
+}
+
+/* ############################################################################## */
+/* ###############                 Landing Page                   ############### */
+/* ############################################################################## */
+
+#container {
+    width: 100vw;
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.logoWhite img {
+    position: fixed;
+    z-index: 2;
+    left: 20px;
+    top: 30px;
+    width: 35px;
+    height: 35px;
+    transition: all 0.3s ease;
+}
+
+.logoWhite .logoLandingPageLight {
+    display: none;
+}
+
+.cross, .menuIcon {
+    position: fixed;
+    z-index: 2;
+    right: 20px;
+    top: 35px;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.menuIcon {
+    color: var(--fontDark);
+}
+
+.menuIcon:hover {
+    transform: scale(1.1) rotate(360deg);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 #menuBtn {
     display: none;
 }
@@ -180,76 +226,18 @@ a {
 
 .landing_page {
     max-width: 100%;
+    height: 100%;
     overflow: hidden;
     position: relative;
 }
 
-.logoOverlay {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-}
-
-.logoOverlay img {
-    width: 80px;
-    height: 80px;
-}
-
-.logoOverlay .logoOverlayLight {
-    display: none;
-}
-
-/* ----------------------- */
-
-/* ----- Home Page ----- */
+/* ############################################################################## */
+/* ###############                Projets Desktop                 ############### */
+/* ############################################################################## */
 
 #projectsDesktop {
     display: none;
 }
-
-#about p {
-    animation: titleAnim 1.5s ease-in;
-}
-
-#about h2 {
-    animation: titleAnim 1.5s ease-in;
-}
-
-#skills p {
-    margin: 1.5rem 2rem 0 2rem;
-}
-
-.toolsIconBox {
-    margin: 2rem 2rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.left, .right {
-    display: flex;
-    flex-direction: column;
-}
-
-.toolsIcon {
-    margin-top: 1.5rem;
-}
-
-footer hr {
-    width: 80%;
-    margin-top: 2rem;
-}
-
-.footerIcon {
-    margin: 0 2rem 2rem 2rem;
-}
-
-footer a {
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* ----- Projects Page ----- */
 
 #projects {
     z-index: 1;
@@ -266,48 +254,9 @@ footer a {
     margin-bottom: 1rem;
 }
 
-.project1{
-    height: 200px;
-    width: 100%;
-    background-image: url("../img/cardCollection.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
-    margin-top: 2rem;
-    position: relative;
-    opacity: 0;
-    animation: titleAnim 1.5s ease-in 0.5s forwards;
-}
-
-.project2 {
-    height: 200px;
-    width: 100%;
-    background-image: url("../img/bourseResponsive.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
-    margin-top: 2rem;
-    position: relative;
-    opacity: 0;
-    animation: titleAnim 1.5s ease-in 0.8s forwards;
-}
-
-.project3 {
-    height: 200px;
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
-    background-color: blue;
-    margin-top: 2rem;
-    position: relative;
-    opacity: 0;
-    animation: titleAnim 1.5s ease-in 1.1s forwards;
-}
-
+.project1,
+.project2,
+.project3,
 .project4 {
     height: 200px;
     width: 100%;
@@ -315,12 +264,28 @@ footer a {
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
-    background-color: blue;
-    margin-top: 2rem;
     position: relative;
+    margin: 2rem 0;
     opacity: 0;
-    animation: titleAnim 1.5s ease-in 1.4s forwards;
+    animation: titleAnim 1.5s ease-in 0.5s forwards;
 }
+
+.project1 {
+    background-image: url("../img/cardCollection.png");
+}
+
+.project2 {
+    background-image: url("../img/bourseResponsive.png");
+}
+
+.project3 {
+    background-color: blue;
+}
+
+.project4 {
+    background-color: blue;
+}
+
 
 .viewMore {
     position: absolute;
@@ -332,14 +297,74 @@ footer a {
     font-weight: bold;
 }
 
-/* ----- Toggle pour passer dark / light mode ------*/
+/* ############################################################################## */
+/* ###############                Section A Propos                ############### */
+/* ############################################################################## */
+
+#about p {
+    animation: titleAnim 1.5s ease-in;
+}
+
+#about h2 {
+    animation: titleAnim 1.5s ease-in;
+}
+
+/* ############################################################################## */
+/* ###############               Section Compétences              ############### */
+/* ############################################################################## */
+
+
+#skills p {
+    margin: 1.5rem 2rem 0 2rem;
+}
+
+/* ############################################################################## */
+/* ###############                 Section Outils                 ############### */
+/* ############################################################################## */
+
+.toolsIconBox {
+    margin: 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left, .right {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolsIcon {
+    margin-top: 1.5rem;
+}
+
+/* ############################################################################## */
+/* ###############                     Footer                     ############### */
+/* ############################################################################## */
+
+footer hr {
+    width: 80%;
+    margin-top: 2rem;
+}
+
+.footerIcon {
+    margin: 0 2rem 2rem 2rem;
+}
+
+footer a {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ############################################################################## */
+/* ###############            Toggle mode Dark/Light              ############### */
+/* ############################################################################## */
 
 .darkLightToggle {
     position: fixed;
     z-index: 2;
     right: 2rem;
     bottom: 2rem;
-    color: #ad7e18;
 }
 
 .checkbox {
@@ -347,17 +372,16 @@ footer a {
 }
 
 .label {
-    height: 50px;
-    width: 26px;
-    background-color: white;
+    height: 54px;
+    width: 30px;
+    background-color: var(--bgLight);
     border-radius: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    transform: scale(1.2);
-    padding: 5px 8px;
+    padding: 5px 10px;
 }
 
 .iconLightMode:hover {
@@ -366,74 +390,88 @@ footer a {
 }
 
 .label .ball {
-    background-color: black;
+    background-color: var(--bgDark);
     border-radius: 50%;
-    height: 24px;
-    width: 24px;
+    height: 26px;
+    width: 26px;
     position: absolute;
-    top: 1px;
-    left: 1px;
+    top: 2px;
+    left: 2px;
     transform: translateY(0px);
     transition: transform 0.4s ease;
 }
 
 .checkbox:checked + .label .ball {
     transform: translateY(24px);
-    background-color: white;
+    background-color: var(--bgLight);
 }
 
 .checkbox:checked + .label {
-    background-color: black;
+    background-color: var(--bgDark);
 }
 
 .fa-moon {
-    color:#0f0f0f;
+    color:var(--fontLight);
 }
 
 .fa-sun {
-    color: white;
+    color: var(--fontDark);
 }
 
-/* --------------------------------------- */
-
-/* -------- style light mode --------*/
+/* ############################################################################## */
+/* ###############                Style light mode                ############### */
+/* ############################################################################## */
 
 .light {
-    background-color: white;
-    color: #0f0f0f;
+    background-color: var(--bgLight);
+    color: var(--fontLight);
 }
 
 .light section {
-    background-color: white;
-    color: black;
+    background-color: var(--bgLight);
+    color: var(--fontLight);
 }
 
 .light .landing_page {
-    background-color: white;
+    background-color: var(--bgLight);
 }
 
 .light .menuIcon {
-    color: #0f0f0f;
+    color: var(--fontLight);
 }
 
-.light .menu_overlay ul li a , 
-.light .menu_overlay .cross {
-    color: white;
+.light .overlayLink , 
+.light .cross {
+    color: var(--fontDark);
+}
+
+.light .overlayLink {
+    background: 
+        linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255));
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.light .overlayLink:hover {
+    background-size: 0 0.1em, 100% 0.1em;
 }
 
 .light .logoOverlay {
-    fill: white;
+    fill: var(--fontDark);
 }
 
 .light .menu_overlay {
-    background-color: black;
+    background-color: var(--bgDark);
 }
 
 .light .logoOverlay .logoOverlayLight {
     display: block;
 }
 
-.light .logoOverlay .logoOverlaydark {
+.light .logoOverlay .logoOverlayDark {
     display: none;
 }
 
@@ -446,8 +484,8 @@ footer a {
 }
 
 .light .viewMore {
-    background-color: #0f0f0f;
-    color: white;
+    background-color: var(--bgDark);
+    color: var(--fontDark);
 }
 
 .light .project1,
@@ -457,11 +495,18 @@ footer a {
     box-shadow: 0 0 50px 10px inset rgba(209, 209, 209, 0.75);
 }
 
-/* ---------------------------------- */
+/* ############################################################################## */
+/* ###############                  Mode Desktop                  ############### */
+/* ############################################################################## */
 
-@media screen and (min-width : 1224px) {
+@media screen and (min-width : 768px) {
+    .logoWhite img {
+        left: 20px;
+        top: 15px;
+    }
+
     .menuIcon {
-        margin-right: 50px;
+        margin-right: 40px;
         font-size: 2.5rem;
     }
 
@@ -479,8 +524,25 @@ footer a {
         font-size: 3rem;
     }
 
+    .logoOverlay {
+        top: 15px;
+    }
+
+    .logoOverlay img {
+        width: 80px;
+        height: 80px;
+    }
+    
     section {
         margin-left: 10vw;
+    }
+
+    .project1,
+    .project2,
+    .project3,
+    .project4 {
+        height: 50vh;
+        width: 80%;
     }
 
     #projectsDesktop {
@@ -488,18 +550,18 @@ footer a {
         height: auto;
         display: block;
         padding: 5rem 0;
-        margin-top: 25vh;
+        margin-top: 10vh;
     }
 
     #projectsDesktop h2 {
         margin-top: 5vh;
-        height: 60vh;
+        height: 10vh;
     }
     
     #projectsDesktop div {
-        height: 60vh;
+        height: 50vh;
         width: 60vw;
-        margin-bottom: 35vh;
+        margin-bottom: 5rem;
         margin-left: 10vw;
     }
 
@@ -507,6 +569,7 @@ footer a {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-top: 1rem;
     }
 
     .left, .right {
@@ -514,35 +577,47 @@ footer a {
         flex-direction: row;
         justify-content: space-between;
         width: 50%;
-        margin: 1rem 0;
+    }
+
+    .left {
+        padding-top: 0;
+    }
+
+    .right {
+        padding-top: 1rem;
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-left: 1rem;
     }
 
     p {
-        font-size: 1.5rem;
+        font-size: 1rem;
         width: 70%;
         margin: 5rem;
         line-height: 3rem;
     }
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .name {
-        font-size: 4rem; 
+        font-size: 3rem; 
     }
 
+    .toolsIconBox:first-child {
+        padding-bottom: -1rem;
+    }
     footer {
-        height: 40vh;
         justify-content: center;
     }
 
     footer p {
+        font-size: 2rem;
+        font-weight: bold;
         text-align: center;
+        margin: 2rem 0;
     }
 }
