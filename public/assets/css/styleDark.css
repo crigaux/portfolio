@@ -22,8 +22,8 @@
 /* ############################################################################## */
 
 :root {
-    --bgDark: #0f0f0f;
-    --bgLight: white;
+    --bgDark: #25272d;
+    --bgLight: #dad8d2;
     --fontDark: white;
     --fontLight: #0f0f0f;
 }
@@ -263,7 +263,7 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow: 0 0 50px 10px inset rgba(0,0,0,0.75);
+    /* box-shadow: 0 0 50px 10px inset var(--bgDark); */
     position: relative;
     margin: 2rem 0;
     opacity: 0;
@@ -291,8 +291,8 @@ a {
     position: absolute;
     bottom: -15px;
     left: 20px;
-    background-color: white;
-    color: black;
+    background-color: var(--bgLight);
+    color: var(--fontLight);
     padding: 0.5rem 1rem;
     font-weight: bold;
 }
@@ -411,11 +411,11 @@ footer a {
 }
 
 .fa-moon {
-    color:var(--fontLight);
+    color:var(--bgDark);
 }
 
 .fa-sun {
-    color: var(--fontDark);
+    color: var(--bgLight);
 }
 
 /* ############################################################################## */
@@ -488,12 +488,12 @@ footer a {
     color: var(--fontDark);
 }
 
-.light .project1,
+/* .light .project1,
 .light .project2,
 .light .project3,
 .light .project4 {
-    box-shadow: 0 0 50px 10px inset rgba(209, 209, 209, 0.75);
-}
+    box-shadow: 0 0 50px 5px inset var(--bgLight);
+} */
 
 /* ############################################################################## */
 /* ###############                  Mode Desktop                  ############### */
