@@ -23,9 +23,9 @@
 
 :root {
     --bgDark: #25272d;
-    --bgLight: #dad8d2;
-    --fontDark: white;
-    --fontLight: #0f0f0f;
+    --bgLight: #e1dfdb;
+    --fontDark: #e1dfdb;
+    --fontLight: #25272d;
 }
 
 /* ############################################################################## */
@@ -89,6 +89,49 @@ footer {
 
 @keyframes titleAnim {
     0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes toggleAnim {
+    0% {
+        transform: translateX(50vh);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(25vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes navAnim {
+    0% {
+        transform: translateY(-50vh);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-25vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes projectAnim {
+    0% {
+        filter: blur(1rem);
         transform: translateX(-50vh);
         opacity: 0;
     }
@@ -97,7 +140,7 @@ footer {
         opacity: 0;
     }
     100% {
-        transform: translateX(0px);
+        transform: translateX(0);
         opacity: 1;
     }
 }
@@ -129,9 +172,9 @@ footer {
 .menu_overlay ul {
     height: 70%;
     width: 100%;
-    margin-top: 10%;
+    margin-top: 15%;
     list-style: none;
-    font-size: 2.5rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -187,7 +230,10 @@ footer {
     top: 30px;
     width: 35px;
     height: 35px;
-    transition: all 0.3s ease;
+}
+
+.menu {
+    animation: navAnim 2s ease;
 }
 
 .logoWhite .logoLandingPageLight {
@@ -205,6 +251,7 @@ footer {
 
 .menuIcon {
     color: var(--fontDark);
+    animation: navAnim 2s ease;
 }
 
 .menuIcon:hover {
@@ -232,11 +279,15 @@ a {
 }
 
 /* ############################################################################## */
-/* ###############                Projets Desktop                 ############### */
+/* ###############                Projets + Mobile                ############### */
 /* ############################################################################## */
 
 #projectsDesktop {
     display: none;
+}
+
+.mobileProject {
+    margin-left: 5%;
 }
 
 #projects {
@@ -267,23 +318,26 @@ a {
     position: relative;
     margin: 2rem 0;
     opacity: 0;
-    animation: titleAnim 1.5s ease-in 0.5s forwards;
 }
 
 .project1 {
     background-image: url("../img/cardCollection.png");
+    animation: projectAnim 1.5s ease-in 0.5s forwards;
 }
 
 .project2 {
     background-image: url("../img/bourseResponsive.png");
+    animation: projectAnim 1.8s ease-in 0.5s forwards;
 }
 
 .project3 {
     background-color: blue;
+    animation: projectAnim 2.1s ease-in 0.5s forwards;
 }
 
 .project4 {
     background-color: blue;
+    animation: projectAnim 2.4s ease-in 0.5s forwards;
 }
 
 
@@ -362,9 +416,10 @@ footer a {
 
 .darkLightToggle {
     position: fixed;
-    z-index: 2;
-    right: 2rem;
+    z-index: 4;
+    right: 1rem;
     bottom: 2rem;
+    animation: toggleAnim 2.5s ease;
 }
 
 .checkbox {
@@ -500,6 +555,15 @@ footer a {
 /* ############################################################################## */
 
 @media screen and (min-width : 768px) {
+
+    section {
+        margin-left: 20%;
+    }
+
+    .darkLightToggle {
+        right: 2rem;
+    }
+
     .logoWhite img {
         left: 20px;
         top: 15px;
@@ -533,8 +597,16 @@ footer a {
         height: 80px;
     }
     
-    section {
-        margin-left: 10vw;
+    .menu_overlay ul {
+        margin-top: 10%;
+    }
+
+    .mobileProjects {
+        margin-left: 25%;
+    }
+
+    #projects {
+        align-items: flex-start;
     }
 
     .project1,
@@ -542,15 +614,16 @@ footer a {
     .project3,
     .project4 {
         height: 50vh;
-        width: 80%;
+        width: 70%;
+        margin-top: 2rem;
     }
 
     #projectsDesktop {
         z-index: 1;
         height: auto;
         display: block;
-        padding: 5rem 0;
         margin-top: 10vh;
+
     }
 
     #projectsDesktop h2 {
@@ -560,9 +633,8 @@ footer a {
     
     #projectsDesktop div {
         height: 50vh;
-        width: 60vw;
+        width: 80%;
         margin-bottom: 5rem;
-        margin-left: 10vw;
     }
 
     .toolsIconBox {
