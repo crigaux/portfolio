@@ -297,7 +297,7 @@ a {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 5rem 0;
+    padding: 5rem 0 2rem 0;
 }
 
 #projects h2 {
@@ -314,7 +314,6 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* box-shadow: 0 0 50px 10px inset var(--bgDark); */
     position: relative;
     margin: 2rem 0;
     opacity: 0;
@@ -331,12 +330,12 @@ a {
 }
 
 .project3 {
-    background-color: blue;
+    background-color: black;
     animation: projectAnim 2.1s ease-in 0.5s forwards;
 }
 
 .project4 {
-    background-color: blue;
+    background-color: black;
     animation: projectAnim 2.4s ease-in 0.5s forwards;
 }
 
@@ -389,6 +388,18 @@ a {
 
 .toolsIcon {
     margin-top: 1.5rem;
+}
+
+.mysqlDark {
+    height: 60px;
+    width: 100px;
+    display: none;
+    margin-left: -20px;
+}
+
+.mysqlLight {
+    display: block;
+    margin-left: -20px;
 }
 
 /* ############################################################################## */
@@ -623,7 +634,6 @@ footer a {
         height: auto;
         display: block;
         margin-top: 10vh;
-
     }
 
     #projectsDesktop h2 {
@@ -632,9 +642,9 @@ footer a {
     }
     
     #projectsDesktop div {
-        height: 50vh;
+        height: 60vh;
         width: 80%;
-        margin-bottom: 5rem;
+        margin-bottom: 10rem;
     }
 
     .toolsIconBox {
@@ -682,6 +692,17 @@ footer a {
     .toolsIconBox:first-child {
         padding-bottom: -1rem;
     }
+
+    .mysqlDark {
+        display: block;
+    }
+    
+    .mysqlLight {
+        display: none;
+        height: 60px;
+        width: 100px;
+    }
+
     footer {
         justify-content: center;
     }
