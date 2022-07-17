@@ -358,8 +358,17 @@ a {
     animation: titleAnim 1.5s ease-in;
 }
 
-#about h2 {
-    animation: titleAnim 1.5s ease-in;
+#about h2:first-child {
+    margin-bottom: 1.5rem;
+}
+
+.name {
+    font-size: 2.2rem;
+}
+
+.animTitle {
+    font-size: 1.8rem;
+    /* margin-left: 1rem; */
 }
 
 /* ############################################################################## */
@@ -676,6 +685,10 @@ footer a {
         margin-left: 1rem;
     }
 
+    .animTitle {
+        margin-left: 1rem;
+    }
+
     p {
         font-size: 1rem;
         width: 70%;
@@ -688,7 +701,11 @@ footer a {
     }
 
     .name {
-        font-size: 3rem; 
+        font-size: 3.5rem;
+    }
+    
+    .animTitle {
+        font-size: 2.5rem;
     }
 
     .toolsIconBox:first-child {
