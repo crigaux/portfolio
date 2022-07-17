@@ -541,6 +541,10 @@ section {
 /* ###############                Style light mode                ############### */
 /* ############################################################################## */
 
+.light *::-webkit-scrollbar-thumb {
+    background-color: #25272d48;
+}
+
 .light {
     background-color: var(--bgLight);
     color: var(--fontLight);
