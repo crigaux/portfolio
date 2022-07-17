@@ -393,13 +393,14 @@ a {
 .mysqlDark {
     height: 60px;
     width: 100px;
-    display: none;
-    margin-left: -20px;
+    margin: 20px 0 0 -20px;
 }
 
 .mysqlLight {
-    display: block;
-    margin-left: -20px;
+    height: 60px;
+    width: 100px;
+    margin: 20px 0 0 -20px;
+    display: none;
 }
 
 /* ############################################################################## */
@@ -554,12 +555,13 @@ footer a {
     color: var(--fontDark);
 }
 
-/* .light .project1,
-.light .project2,
-.light .project3,
-.light .project4 {
-    box-shadow: 0 0 50px 5px inset var(--bgLight);
-} */
+.light .mysqlDark {
+    display: none;
+}
+
+.light .mysqlLight {
+    display: block;
+}
 
 /* ############################################################################## */
 /* ###############                  Mode Desktop                  ############### */
@@ -691,16 +693,6 @@ footer a {
 
     .toolsIconBox:first-child {
         padding-bottom: -1rem;
-    }
-
-    .mysqlDark {
-        display: block;
-    }
-    
-    .mysqlLight {
-        display: none;
-        height: 60px;
-        width: 100px;
     }
 
     footer {
