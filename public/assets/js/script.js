@@ -6,7 +6,7 @@ const lightMode = document.getElementById('lightMode');
 
 lightMode.addEventListener('change', () => {
     document.body.classList.toggle('light');
-})
+});
 
 // ######################################################
 // #####              Animation du h1               ##### 
@@ -22,6 +22,6 @@ new Typewriter(nameAnim, {
 .typeString('<span style="font-style: italic;">Développeur Web</span>')
 .pauseFor(1000)
 .deleteChars(15)
-.pauseFor(400)
+.pauseFor(300)
 .typeString('<span style="font-style: italic;">Apprenti Dev Web</span>')
 .start()

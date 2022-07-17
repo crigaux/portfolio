@@ -446,6 +446,26 @@ footer a {
 }
 
 /* ############################################################################## */
+/* ###############                  Scroll Snap                   ############### */
+/* ############################################################################## */
+
+.landing_page {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+.footer {
+    height: 30vh;
+    margin: 0;
+}
+
+/* ############################################################################## */
 /* ###############            Toggle mode Dark/Light              ############### */
 /* ############################################################################## */
 
@@ -673,7 +693,7 @@ footer a {
         z-index: 1;
         height: auto;
         display: block;
-        margin-top: 10vh;
+        padding-top: 20vh;
     }
 
     #projectsDesktop h2 {
