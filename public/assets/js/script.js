@@ -25,3 +25,26 @@ new Typewriter(nameAnim, {
 .pauseFor(300)
 .typeString('<span style="font-style: italic;">Apprenti Dev Web</span>')
 .start()
+
+// ######################################################
+// #####              Animation Scroll              ##### 
+// ######################################################
+
+let skill = document.getElementById('skills');
+let project1 = document.querySelector('.project1');
+let project2 = document.querySelector('.project2');
+let tools = document.getElementById('tools');
+let sectionsArray = [skill, project1, project2, tools];
+
+let animationTrigger = (element) => {
+    const {scrollTop, clientHeight} = document.documentElement;
+    if(scrollTop > (scrollTop + element.getBoundingClientRect().top - 800).toFixed()) {
+        element.classList.add('animationOnScroll');
+    }
+}
+
+window.addEventListener('scroll', () => {
+    sectionsArray.forEach(element => {
+        animationTrigger(element);
+    })
+})
