@@ -30,15 +30,15 @@ new Typewriter(nameAnim, {
 // #####              Animation Scroll              ##### 
 // ######################################################
 
-let skill = document.getElementById('skills');
-let project1 = document.querySelector('.project1');
-let project2 = document.querySelector('.project2');
-let tools = document.getElementById('tools');
-let sectionsArray = [skill, project1, project2, tools];
+const skill = document.getElementById('skills');
+const project1 = document.querySelector('.project1');
+const project2 = document.querySelector('.project2');
+const tools = document.getElementById('tools');
+const sectionsArray = [skill, project1, project2, tools];
 
 let animationTrigger = (element) => {
     const {scrollTop, clientHeight} = document.documentElement;
-    if(scrollTop > (scrollTop + element.getBoundingClientRect().top - 800).toFixed()) {
+    if(scrollTop > (scrollTop + element.getBoundingClientRect().top - 900).toFixed()) {
         element.classList.add('animationOnScroll');
     }
 }
