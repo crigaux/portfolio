@@ -62,18 +62,20 @@ section {
 }
 
 p {
-    margin: 2rem;
+    margin: 2rem 1rem;
     font-size: 1rem;
 }
+
 
 h2 {
     font-size: 2rem;
     font-weight: bold;
     position: relative;
+    margin-left: 1rem;
 }
 
 h3 {
-    margin: 2rem 0 -0.5rem 2rem;
+    margin: 2rem 0 -0.5rem 1rem;
 }
 
 footer {
@@ -130,13 +132,8 @@ footer {
 }
 
 @keyframes projectAnim {
-    0% {
-        filter: blur(1rem);
-        transform: translateX(-50vh);
-        opacity: 0;
-    }
     50% {
-        transform: translateX(-25vh);
+        transform: translateX(-80vh);
         opacity: 0;
     }
     100% {
@@ -320,23 +317,23 @@ a {
 }
 
 .project1 {
-    background-image: url("../img/cardCollection.png");
-    animation: projectAnim 1.5s ease-in 0.5s forwards;
+    background-image: url("../img/bourseResponsive.png");
+    /* animation: projectAnim 1.5s ease-in 0.5s forwards; */
 }
 
 .project2 {
-    background-image: url("../img/bourseResponsive.png");
-    animation: projectAnim 1.8s ease-in 0.5s forwards;
+    background-image: url("../img/cardCollection.png");
+    /* animation: projectAnim 1.8s ease-in 0.5s forwards; */
 }
 
 .project3 {
     background-color: black;
-    animation: projectAnim 2.1s ease-in 0.5s forwards;
+    /* animation: projectAnim 2.1s ease-in 0.5s forwards; */
 }
 
 .project4 {
     background-color: black;
-    animation: projectAnim 2.4s ease-in 0.5s forwards;
+    /* animation: projectAnim 2.4s ease-in 0.5s forwards; */
 }
 
 
@@ -353,6 +350,10 @@ a {
 /* ############################################################################## */
 /* ###############                Section A Propos                ############### */
 /* ############################################################################## */
+
+#about {
+    margin-top: 2.5rem;
+}
 
 #about p {
     animation: titleAnim 1.5s ease-in;
@@ -383,21 +384,29 @@ a {
 
 .animTitle {
     font-size: 1.8rem;
+    margin: 1rem 0 0 1rem;
 }
 
 /* ############################################################################## */
 /* ###############               Section Compétences              ############### */
 /* ############################################################################## */
 
+#skills {
+    opacity: 0;
+}
 
 #skills p {
-    margin: 1.5rem 2rem 0 2rem;
+    margin: 1.5rem 2rem 0 1rem;
 }
 
 /* ############################################################################## */
 /* ###############                 Section Outils                 ############### */
 /* ############################################################################## */
 
+ #tools {
+    opacity: 0;
+ }
+ 
 .toolsIconBox {
     margin: 2rem 2rem;
     display: flex;
@@ -426,9 +435,15 @@ a {
     display: none;
 }
 
+
 /* ############################################################################## */
 /* ###############                     Footer                     ############### */
 /* ############################################################################## */
+
+.footer {
+    height: 30vh;
+    margin: 0;
+}
 
 footer hr {
     width: 80%;
@@ -449,7 +464,7 @@ footer a {
 /* ###############                  Scroll Snap                   ############### */
 /* ############################################################################## */
 
-.landing_page {
+/* .landing_page {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
@@ -458,21 +473,18 @@ footer a {
 section {
     scroll-snap-align: start;
     height: 100vh;
-}
+} */
 
-.footer {
-    height: 30vh;
-    margin: 0;
-}
 
-*::-webkit-scrollbar {
+
+/* *::-webkit-scrollbar {
     width: 10px;
 }
 
 *::-webkit-scrollbar-thumb {
     background-color: #e1dfdb1a;
     border-radius: 20px;
-}
+} */
 
 /* ############################################################################## */
 /* ###############            Toggle mode Dark/Light              ############### */
@@ -535,6 +547,14 @@ section {
 
 .fa-sun {
     color: var(--bgLight);
+}
+
+/* ############################################################################## */
+/* ###############               Animation au scroll              ############### */
+/* ############################################################################## */
+
+.animationOnScroll {
+    animation: projectAnim 1s ease-out forwards;
 }
 
 /* ############################################################################## */
@@ -668,8 +688,36 @@ section {
         width: 80px;
     }
 
+    .menu_overlay {
+        width: 100vw;
+        height: 15vh;
+        position: fixed;
+        color: var(--fontLight);
+        background: var(--bgLight);
+        display: flex;
+        flex-direction: row;
+        z-index: 100;
+        transform: translateX(110%);
+        transition: transform 0.7s ease;
+        margin-top: 0;
+    }
+
+    .menu_overlay ul {
+        height: 70%;
+        width: 100%;
+        margin-top: 0;
+        list-style: none;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 2.5rem 6rem 0 6rem;
+    }
+
     .menu_overlay ul li a {
-        font-size: 3rem;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: flex-start;
     }
 
     .logoOverlay {
@@ -679,10 +727,6 @@ section {
     .logoOverlay img {
         width: 80px;
         height: 80px;
-    }
-    
-    .menu_overlay ul {
-        margin-top: 10%;
     }
 
     .mobileProjects {
@@ -699,7 +743,7 @@ section {
     .project4 {
         height: 50vh;
         width: 70%;
-        margin-top: 2rem;
+        margin: 2rem 0 0 1rem;
     }
 
     #projectsDesktop {
@@ -715,8 +759,8 @@ section {
     }
     
     #projectsDesktop div {
-        height: 60vh;
-        width: 80%;
+        height: 65vh;
+        width: 70%;
         margin-bottom: 10rem;
     }
 
@@ -731,7 +775,7 @@ section {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 50%;
+        width: 70%;
     }
 
     .left {
@@ -751,15 +795,17 @@ section {
         margin-left: 1rem;
     }
 
-    p {
+    #skills p,
+    #about p {
         font-size: 1rem;
         width: 70%;
-        margin: 5rem;
+        margin-left: 1rem;
         line-height: 3rem;
     }
 
     h3 {
         font-size: 1.5rem;
+        margin-left: 1rem;
     }
 
     .name {
